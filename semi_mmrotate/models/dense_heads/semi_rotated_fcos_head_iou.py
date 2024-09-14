@@ -118,21 +118,21 @@ class SemiRotatedFCOSHeadIOU(RotatedFCOSHead):
             pos_decoded_target_preds = bbox_coder.decode(
                 pos_points, pos_bbox_targets)
             
-            # smooth the centerness based on realative scale
+            # compute ground truth iou
             pos_decoded_bbox_preds_clone = pos_decoded_bbox_preds.clone().detach()
             pos_ious_targets = diff_iou_rotated_2d(pos_decoded_bbox_preds_clone.unsqueeze(0), pos_decoded_target_preds.unsqueeze(0))
             pos_ious_targets = pos_ious_targets.squeeze(0).clamp(min=1e-6)
-            # centerness loss
+            # iou instead of centerness 
             loss_centerness = self.loss_centerness(
                 pos_ious, pos_ious_targets, avg_factor=num_pos)
-            centerness_denorm = max(
+            iou_denorm = max(
                     reduce_mean(pos_ious_targets.sum().detach()), 1e-6)
             
             loss_bbox = self.loss_bbox(
                 pos_decoded_bbox_preds,
                 pos_decoded_target_preds,
                 weight=pos_ious_targets,
-                avg_factor=centerness_denorm)
+                avg_factor=iou_denorm)
             if self.separate_angle:
                 loss_angle = self.loss_angle(
                     pos_angle_preds, pos_angle_targets, avg_factor=num_pos)
