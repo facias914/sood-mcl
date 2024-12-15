@@ -1,6 +1,6 @@
 ![mcl_arch](assets/pipeline.png)
 
-### Multi-clue Consistency Learning to Bridge Gaps Between General and Oriented Object in Semi-supervised Detection[https://arxiv.org/abs/2407.05909]
+### [AAAI2025] Multi-clue Consistency Learning to Bridge Gaps Between General and Oriented Object in Semi-supervised Detection[https://arxiv.org/abs/2407.05909]
 
 
 ## Abstract
