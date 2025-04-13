@@ -1,4 +1,6 @@
-[### [AAAI2025] Multi-clue Consistency Learning to Bridge Gaps Between General and Oriented Object in Semi-supervised Detection[https://ojs.aaai.org/index.php/AAAI/article/view/32816/34971]](https://ojs.aaai.org/index.php/AAAI/article/view/32816/34971)
+> **[Multi-clue Consistency Learning to Bridge Gaps Between General and Oriented Object in Semi-supervised Detection](https://ojs.aaai.org/index.php/AAAI/article/view/32816/34971)**</br>
+> Chenxu Wang, Chunyan Xu, Xiang Li, Yuxuan Li, Xu Guo, Zhen Cui</br>
+> *In The Association for the Advancement of Artificial Intelligence (AAAI), 2025*
 
 ![mcl_arch](assets/pipeline.png)
 
